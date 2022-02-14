@@ -1,5 +1,5 @@
 import React from 'react'
-//roues are case sensitive
+//routes are case sensitive
 const featureTwo = () => {
   return (
     <div>featureTwo</div>
