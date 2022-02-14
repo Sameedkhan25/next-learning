@@ -28,3 +28,5 @@ const Docs = () => {
 }
 
 export default Docs
+
+// use double brackets to catch /docs
