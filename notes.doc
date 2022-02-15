@@ -1,0 +1,43 @@
+* nextjs supports page based routing
+* nextjs supports pre-rendering that is helpful in 
+    1) perfomance of the app as the page loads quickly
+    2) better SEO because page source has more data
+* nextjs has two types of pre-rendering 
+    1) static generation
+    2) server side rendering
+
+* static generation:
+    1) static generation without external data
+    2) static generation with external data
+   -> html pages are generated at build time
+   -> this is the defaiult behavour of nextjs to generate static page at build time
+
+   ->production build: page will be pre-rendered one time when we run the build command 
+
+   -> dev build: page will be pre-rendered on EVERY request
+
+    -> getStaticProps:
+        -runs only in server side
+        -the function will never run client side
+        -the code will not be bundled in js when sent to the browser
+        -server side code can be written in getStaticProps
+            like using fs module and query DB
+        -can only be used in pages not regular components    
+        -used for prerendering not client side data fetching
+        -return object with props key that is an object
+        -runs on build time, during dev mode runs on each req.
+
+    * running static generation build
+    <link> pre-fetching 
+        html file 
+        json file also produced
+
+        on naviagion to the link page nextjs uses this json file to create page component client side
+
+
+        html files + json + js files are generated
+
+        -navigate directly to the page route -> html file will be served
+        -navigate from the link 
+            ->client side page is created using the js and json prefetched from the server
+
